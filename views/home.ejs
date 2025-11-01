@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ExpressJS</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    input, button { padding: 10px; margin: 5px; }
+    form { margin: 10px auto; display: inline-block; }
+  </style>
+</head>
+<body>
+  <h1>مرحباً، <%= name %></h1>
+
+  <form action="/choose-name" method="POST">
+    <input type="text" name="name" placeholder="اكتب اسمك" autocomplete="off">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button type="submit">إرسال</button>
+  </form>
+
+  <form action="/logout" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button type="submit">تسجيل الخروج</button>
+  </form>
+</body>
+</html>
