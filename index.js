@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 app.post("/choose-name", (req, res) => {
   const name = req.body.name?.trim();
   if (!name) {
-    return res.send(`<p>الرجاء إدخال اسم صالح.</p><a href="/">رجوع</a>`);
+    return res.send(`<p>Please enter a valid name.</p><a href="/">Back</a>`);
   }
   req.session.user = name;
   res.redirect("/");
@@ -56,9 +56,9 @@ app.post("/logout", (req, res) => {
 // CSRF
 app.use((err, req, res, next) => {
   if (err.code === "EBADCSRFTOKEN") {
-    return res.status(403).send("رمز الأمان (CSRF) غير صالح.");
+    return res.status(403).send("Invalid CSRF token.");
   }
-  res.status(500).send("حدث خطأ في الخادم.");
+  res.status(500).send("Internal server error");
 });
 
 //Server
