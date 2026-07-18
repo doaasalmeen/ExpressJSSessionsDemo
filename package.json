@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/doaasalmeen/ExpressJSSessionsDemo.git"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "express",
+    "ejs",
+    "sessions",
+    "csrf",
+    "tutorial"
+  ],
   "author": "",
   "license": "ISC",
   "type": "module",
